@@ -29,6 +29,7 @@ export class PageTemplate {
                     <a href="/">Home</a>
                     <a href="/about">About</a>
                     <a href="/register">Register</a>
+                    <a href="/services">Services</a>
                     <a href="/login">Login</a>
                 </nav>
             </header>`;
@@ -49,12 +50,6 @@ export class PageTemplate {
         return `
             <footer>
                 <p>Pagaminta Lietuvoje &copy; 2025</p>
-                <nav>
-                    <a href="/">Home</a>
-                    <a href="/about">About</a>
-                    <a href="/register">Register</a>
-                    <a href="/login">Login</a>
-                </nav>
             </footer>`;
     }
 
