@@ -1,8 +1,8 @@
 import { PageTemplate } from "../template/PageTemplate.js";
 
 export class Page404 extends PageTemplate {
-    constructor() {
-        super();
+    constructor(req) {
+        super(req);
         this.isAsideVisible = false;
     }
 

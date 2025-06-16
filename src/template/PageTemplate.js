@@ -10,6 +10,14 @@ export class PageTemplate {
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Express example</title>
+                <link rel="shortcut icon" href="/logo.png" />
+                <link rel="icon" type="image/png" href="/favico"/favicon-96x96.png" sizes="96x96" />
+                <link rel="icon" type="image/svg+xml" href="/favico"/favicon.svg" />
+                <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+                <meta name="apple-mobile-web-app-title" content="Coming soon" />
+                <link rel="manifest" href="/favicon/site.webmanifest" />
+                <link rel="stylesheet" href="/css/main.css">
+                <link rel="stylesheet" href="/css/vendor/font-awesome.min.css">
             </head>`;
     }
 
@@ -57,6 +65,13 @@ export class PageTemplate {
             </footer>`;
     }
 
+    script() {
+        if (this.pageJS === '') {
+            return '';
+        }
+        return `<script src="/js/${this.pageJS}.js" type="module"></script>`;
+    }
+
     aside() {
         return `<aside>SONINIS MENU</aside>`;
     }
@@ -75,6 +90,7 @@ export class PageTemplate {
                 ${this.isAsideVisible ? this.aside() : ''}
                 <main>${this.main()}</main>
                 ${this.pageType === 'default' ? this.footer() : this.footerAuth()}
+                <script src="/js/main.js" type="module"></script>
             </body>
             </html>`;
     }
