@@ -1,0 +1,230 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #000;
+}
+.main-header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+.main-header .logo {
+  width: auto;
+  height: 2.5rem;
+}
+.main-header .main-nav {
+  display: none;
+  align-items: center;
+  gap: 3rem;
+}
+.main-header .link {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2em;
+  text-decoration: none;
+}
+.main-header .link:hover {
+  color: var(--color-primary);
+}
+.main-header .dropdown {
+  position: relative;
+}
+.main-header .dropdown > .link {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.main-header .dropdown .fa-angle-down {
+  font-size: 1.3em;
+}
+.main-header .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 13rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  position: absolute;
+  transition: all 0.3s;
+  top: 5rem;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.main-header .dropdown:hover .dropdown-content {
+  top: 2.4rem;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+}
+.main-header .dropdown-content > .link {
+  color: #333;
+}
+.main-header .dropdown-content > .link:hover {
+  color: var(--color-primary);
+}
+
+.main-header .hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  width: 1.8em;
+  height: 1.8em;
+  border: 1px solid #fff;
+  padding: 0.3em;
+  border-radius: 0.3em;
+}
+
+.mobile-main-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  padding: 2rem;
+  translate: -100% 0;
+  transition: all 0.5s;
+  overflow: auto;
+}
+.mobile-main-header.show {
+  translate: 0 0;
+}
+
+.mobile-main-header .logo {
+  width: auto;
+  height: 2.5rem;
+}
+.mobile-main-header .close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+}
+.mobile-main-header .main-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.mobile-main-header .link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.mobile-main-header .link .fa {
+  display: none;
+}
+.mobile-main-header .link .fa-plus {
+  display: block;
+}
+.mobile-main-header .dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.mobile-main-header .dropdown.expanded .fa-plus {
+  display: none;
+}
+.mobile-main-header .dropdown.expanded .fa-minus {
+  display: block;
+}
+.mobile-main-header .dropdown-content {
+  display: none;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-left: 2rem;
+}
+.mobile-main-header .dropdown.expanded .dropdown-content {
+  display: flex;
+}
+
+.mobile-main-header .details-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.mobile-main-header .details-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.mobile-main-header .details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+.mobile-main-header .details-item {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.mobile-main-header .details-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.mobile-main-header .details-icon {
+  font-size: 1.5rem;
+  width: 1.8em;
+  height: 1.8em;
+  text-align: center;
+  line-height: 1.75em;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50%;
+  text-decoration: none;
+}
+.mobile-main-header .details-icon:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+@media (min-width: 992px) {
+  .main-header {
+    background-color: transparent;
+    transition: all 0.3s;
+  }
+  .main-header .header-content {
+    background-color: #7778;
+    backdrop-filter: blur(7px);
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+  .main-header.header-fixed {
+    background-color: #000;
+  }
+  .main-header.header-fixed .header-content {
+    background-color: inherit;
+    backdrop-filter: none;
+    padding: 1rem 0;
+  }
+  .main-header .main-nav {
+    display: flex;
+  }
+  .main-header .hamburger {
+    display: none;
+  }
+
+  .mobile-main-header {
+    display: none;
+  }
+}

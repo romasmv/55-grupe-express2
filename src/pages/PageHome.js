@@ -1,18 +1,17 @@
+import { hero } from "../components/hero.js";
+import { services } from "../components/services.js";
 import { PageTemplate } from "../template/PageTemplate.js";
 
 export class PageHome extends PageTemplate {
+    constructor(req) {
+        super(req);
+        this.pageJS = 'main';
+    }
+
     main() {
-        const services = ['UX', 'Design', 'Development'];
-        let servicesHTML = '';
-
-        for (const service of services) {
-            servicesHTML += `<li>${service}</li>`;
-        }
-
         return `
-            <h1>Home page</h1>
-            <p>Lorem  voluptates dolores impedit eum aliquam obcaecati?</p>
-            <h1>Services</h1>
-            <ul>${servicesHTML}</ul>`;
+            ${hero()}
+            ${services(3)}
+        `;
     }
 }
