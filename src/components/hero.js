@@ -16,7 +16,7 @@ export function hero() {
                         STARS
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 abc123">
                     <p style="font-size: 5rem; color: red;">Šis puslapis peržiūrėtas: ${stats.visitsCount}</p>
                 </div>
             </div>
