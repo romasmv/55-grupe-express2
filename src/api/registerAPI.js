@@ -1,14 +1,15 @@
 import { users } from "../data/users.js";
+import { IsValid } from "../lib/isValid.js";
 
 export function registerAPI(req, res) {
-    // is not valid req.body.username
-    if (false) {
-        return res.send('Netinkamas username');
-    }
+    const [err, msg] = IsValid.fields(req.body, {
+        username: 'username',
+        pass: 'password',
+        userAge: 'age',
+    });
 
-    // is not valid req.body.password
-    if (false) {
-        return res.send('Netinkamas password');
+    if (err) {
+        return msg;
     }
 
     // tikriname, ar nera dublikatu
