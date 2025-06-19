@@ -26,8 +26,8 @@ export function registerAPI(req, res) {
         }
     }
 
-    // "registruojame"
-    users.push(req.body);
+// "registering"
+    users.push({ id: users.length + 1, ...req.body });
 
     return res.json({
         status: 'success',
