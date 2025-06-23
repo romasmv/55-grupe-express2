@@ -1,5 +1,6 @@
 import { users, loginTokens } from "../data/users.js";
-import { IsValid } from "../lib/isValid.js";
+import { IsValid } from "../lib/IsValid.js";
+import { randomString } from "../lib/randomString.js";
 
 export function loginAPI(req, res) {
     const [err, msg] = IsValid.fields(req.body, {
@@ -31,19 +32,27 @@ export function loginAPI(req, res) {
             },
         });
     }
-     
-    //TODO: reikalinga randomString() funkcija
-    const randomString = '584hgs5fasd584aef';
+
+    const loginTokenString = randomString();
+
     loginTokens.push({
         userId: userObj.id,
-        randomString: randomString,
+        randomString: loginTokenString,
         createdAt: Date.now(),
     });
 
+    const cookieParams = [
+        `login-token=${loginTokenString}`,
+        'domain=localhost',
+        'max-age=3600',
+        'HttpOnly',
+        'path=/',
+        'Secure',
+        'SameSite=Lax',
+    ];
+
     return res
-        .set({
-            'Set-Cookie': `login-token=${randomString}; domain=localhost; max-age=3600; HttpOnly; path=/; Secure; SameSite=Lax`,
-        })
+        .set({ 'Set-Cookie': cookieParams.join('; ') })
         .json({
             status: 'success',
             msg: 'Tu buvai sekmingai prijungtas prie sistemos',

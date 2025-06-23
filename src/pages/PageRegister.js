@@ -8,6 +8,8 @@ export class PageRegister extends PageTemplate {
     }
 
     main() {
+        const username ='chuck';
+        const password = 'chuckchuckchuck'
         return `
             <section class="container">
                 <div class="row">
@@ -18,12 +20,12 @@ export class PageRegister extends PageTemplate {
                         <form class="form">
                             <div class="form-row">
                                 <label>Username</label>
-                                <input id="username" type="text" autofocus>
+                                <input id="username" type="text" value="${username}" required autofocus>
                                 <span id="error_username" class="info info-error">ERROR</span>
                             </div>
                             <div class="form-row">
                                 <label>Password</label>
-                                <input id="password" type="password">
+                                <input id="password" type="password" value="${password}" required">
                                 <span id="error_password" class="info info-error">ERROR</span>
                             </div>
                             <div class="form-row">

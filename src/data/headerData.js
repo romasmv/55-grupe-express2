@@ -20,6 +20,7 @@ export const headerMenuData = [
     },
     { href: '/register', text: 'Register' },
     { href: '/login', text: 'Login' },
+    { href: '/dashboard', text: 'Dashboard' },
 ];
 
 export const contactInfoData = {
