@@ -1,5 +1,5 @@
 import { users, loginTokens } from "../data/users.js";
-import { IsValid } from "../lib/IsValid.js";
+import { IsValid } from "../lib/isValid.js";
 import { randomString } from "../lib/randomString.js";
 
 export function loginAPI(req, res) {

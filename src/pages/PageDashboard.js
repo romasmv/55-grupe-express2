@@ -28,6 +28,7 @@ export class PageDashboard extends PageTemplate {
                     <div class="col-12">
                         <h1>Dashboard</h1>
                         <p>Cia turetu buti matoma kazkokia informacija, kuri yra skirta matyti TIK prisijungusiam vartotojui</p>
+                        <p>USERNAME: ${this.req.user.username}</p>
                         <a href="/">Back home</a>
                     </div>
                 </div>
