@@ -1,4 +1,4 @@
-import { headerMenuData } from "../data/headerData.js";
+import { privateHeaderMenuData, publicHeaderMenuData } from "../data/headerData.js";
 import { stats } from "../data/stats.js";
 
 export class PageTemplate {
@@ -25,6 +25,8 @@ export class PageTemplate {
     }
 
     header() {
+        const headerMenuData = this.req.user.isLoggedIn ? privateHeaderMenuData : publicHeaderMenuData;
+
         return `
             <header class="container main-header">
                 <div class="row">
@@ -87,7 +89,7 @@ export class PageTemplate {
             <footer class="container bg-dark">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
-                        <img class="logo" style="width:30%" src="/img/logo.webp" alt="Logo">
+                        <img class="logo" src="/img/logo.webp" alt="Logo">
                         <p>Our goal is to demystify the process, address your concerns, and empower you with the knowledge to embark.</p>
                         <div>
                             <a href="#" target="_blank">SOC</a>

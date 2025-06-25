@@ -16,7 +16,7 @@ import { cookieParser } from './middleware/cookieParser.js';
 import { userData } from './middleware/userData.js';
 
 const app = express();
-const port = 3000;
+const port = 3010;
 
 app.use(express.static('public'));
 app.use(express.json());

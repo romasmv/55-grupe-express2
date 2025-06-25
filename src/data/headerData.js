@@ -1,4 +1,4 @@
-export const headerMenuData = [
+export const commonheaderMenuData = [
     { href: '/', text: 'Home' },
     {
         href: '/about',
@@ -18,8 +18,14 @@ export const headerMenuData = [
             { href: '#', text: 'Management' },
         ],
     },
+];
+export const publicheaderMenuData = [
+    ...commonheaderMenuData,
     { href: '/register', text: 'Register' },
     { href: '/login', text: 'Login' },
+];
+export const privateheaderMenuData = [
+    ...commonheaderMenuData,
     { href: '/dashboard', text: 'Dashboard' },
 ];
 
